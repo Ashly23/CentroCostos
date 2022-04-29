@@ -18,8 +18,12 @@ import { VistaComponent } from './vista/vista.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ModalFactorComponent } from './vista/modal-factor/modal-factor.component';
+import { ModalMedidorComponent } from './vista/modal-medidor/modal-medidor.component';
+import { ModalEditarComponent } from './vista/modal-editar/modal-editar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 registerLocaleData(en);
 
@@ -28,7 +32,9 @@ registerLocaleData(en);
     AppComponent,
     MenuComponent,
     VistaComponent,
-    ModalFactorComponent
+    ModalFactorComponent,
+    ModalMedidorComponent,
+    ModalEditarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ registerLocaleData(en);
     NzTableModule,
     NzButtonModule,
     ReactiveFormsModule,
-    NzModalModule
+    NzModalModule,
+    NzDatePickerModule,
+    NzFormModule
 
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

@@ -36,6 +36,7 @@ export class VistaComponent implements OnInit {
      centroCosto: 'Turbo X'
     },
   ];
+
 }
 
 
