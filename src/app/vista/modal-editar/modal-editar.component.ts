@@ -38,4 +38,6 @@ export class ModalEditarComponent implements OnInit {
       descripcion: [null, [Validators.required]],
     });
   }
+
+  
 }

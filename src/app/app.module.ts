@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 registerLocaleData(en);
 
@@ -50,7 +51,8 @@ registerLocaleData(en);
     ReactiveFormsModule,
     NzModalModule,
     NzDatePickerModule,
-    NzFormModule
+    NzFormModule,
+    NzSelectModule
 
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

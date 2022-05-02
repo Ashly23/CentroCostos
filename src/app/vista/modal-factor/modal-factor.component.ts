@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+interface DataItem {
+  fechaInicial: string;
+  fechaFinal: string;
+  valor:number;
+} 
+
 @Component({
   selector: 'app-modal-factor',
   templateUrl: './modal-factor.component.html',
@@ -38,5 +44,31 @@ export class ModalFactorComponent implements OnInit {
       descripcion: [null, [Validators.required]],
     });
   }
+
+  listOfColumn = [
+    {
+      title: 'Fecha Inicial',
+      compare: null,
+      priority: false
+    },
+    {
+      title: 'Centro de Final',
+      compare: null,
+      priority: false
+    },
+    {
+      title: 'Valor',
+      compare: (a: DataItem, b: DataItem) => a.valor - b.valor,
+      priority: 2
+    },
+    
+  ];
+  listOfData: DataItem[] = [
+    {
+     fechaInicial: '23 marzo',
+     fechaFinal: '23 mayo',
+     valor: 1345
+    },
+  ];
   
 }

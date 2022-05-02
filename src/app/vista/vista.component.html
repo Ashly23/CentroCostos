@@ -3,7 +3,11 @@
       <h1>Centro de Costos</h1>
   </div>
 </div>
+<div nz-row>
+  <div nz-col nzSpan="24"><button nz-button nzType="primary">Nuevo Empleado</button></div>
+</div>
 <hr>  
+
 <nz-table #sortTable [nzData]="listOfData" nzTableLayout="fixed" [nzScroll]="{ x: '100%', y: '240px' }">
     <thead>
       <tr>
@@ -29,13 +33,14 @@
         </td>
         <td>{{ data.grupo }}</td>
         <td>{{ data.centroCosto }}</td>
+
         <td nzAlign="center">
           <app-modal-factor></app-modal-factor>
         </td>
         <td nzAlign="center">
           <app-modal-medidor></app-modal-medidor>
         </td>
+
       </tr>
     </tbody>
-    <tr></tr>
   </nz-table>
