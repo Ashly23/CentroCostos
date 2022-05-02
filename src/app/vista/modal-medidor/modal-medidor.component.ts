@@ -44,8 +44,9 @@ export class ModalMedidorComponent implements OnInit {
 
   CleanForm(){
     this.validateForm  = this.fb.group({
-      nombre: [null, [Validators.required]],
-      descripcion: [null, [Validators.required]],
+      id: [null, [Validators.required]],
+      medidorId: [null, [Validators.required]],
+      operacion: [null, [Validators.required]],
     });
   }
   

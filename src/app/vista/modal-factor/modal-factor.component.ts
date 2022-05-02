@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { endOfMonth } from 'date-fns';
+
 interface DataItem {
   fechaInicial: string;
   fechaFinal: string;
@@ -13,6 +15,12 @@ interface DataItem {
   styleUrls: ['./modal-factor.component.css']
 })
 export class ModalFactorComponent implements OnInit {
+  ranges = { Today: [new Date(), new Date()], 'This Month': [new Date(), endOfMonth(new Date())] };
+
+  onChange(result: any): void {
+    console.log('From: ', result[0], ', to: ', result[1]);
+  }
+
   isVisible = false;
   validateForm !: FormGroup;
 
@@ -40,8 +48,8 @@ export class ModalFactorComponent implements OnInit {
 
   CleanForm(){
     this.validateForm  = this.fb.group({
-      nombre: [null, [Validators.required]],
-      descripcion: [null, [Validators.required]],
+      fecha: ['', [Validators.required]],
+      valor: ['', [Validators.required]],
     });
   }
 
